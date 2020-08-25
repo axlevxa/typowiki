@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'inconsolata';
+  src: url("assets/fonts/inconsolata/inconsolata-regular.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'inter-web';
+  src: url("assets/fonts/inter/Inter-Regular.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'inter-web';
+  src: url("assets/fonts/inter/Inter-Italic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'inter-web';
+  src: url("assets/fonts/inter/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'inter-web';
+  src: url("assets/fonts/inter/Inter-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
