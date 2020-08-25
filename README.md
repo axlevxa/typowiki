@@ -1,5 +1,7 @@
 # typowiki
-Simple, responsive DokuWiki Theme
+Simple, responsive DokuWiki Template
+
+DokuWiki template page: https://www.dokuwiki.org/template:typowiki
 
 ## Modular and structural
 
