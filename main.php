@@ -24,7 +24,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
     <link href="<?php echo tpl_basedir(); ?>assets/fonts/microns/microns.css" rel="stylesheet">
-     <script src="js/typowiki.js" defer></script> 
+     <script src="<?php echo tpl_basedir(); ?>js/typowiki.js" defer></script> 
 
 </head>
 
