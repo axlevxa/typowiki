@@ -1,0 +1,190 @@
+body {
+    color: $text-default;
+    font-family: $font-family;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    font-weight: $font-weight-base;
+}
+
+p {
+    margin: 0;
+    margin-bottom: $md-pad;
+}
+
+b, strong {
+    font-weight: $font-weight-strong;
+}
+
+.usr-content p img {
+    margin-top: $lg-pad;
+    margin-bottom: $lg-pad;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: inherit;
+    font-family: inherit;
+    line-height: 1.3;
+    font-weight: $font-weight-strong;
+    margin-bottom: .7rem;
+}
+
+h1 {
+    font-size: $font-size-h1;
+    margin: $lg-pad 0 $md-pad;
+    letter-spacing: $letter-spacing-base - 0.2;
+}
+
+h2 {
+    font-size: $font-size-h2;
+    margin: $lg-pad 0 $md-pad;
+    letter-spacing: $letter-spacing-base - 0.2;
+}
+
+h3 {
+    font-size: $font-size-h3;
+    margin: $md-pad 0 $xs-pad;
+    color: $text-header-sm;
+}
+
+h4 {
+    font-size: $font-size-h4;
+    margin: $md-pad 0 $xs-pad;
+    color: $text-header-sm;
+}
+
+h5 {
+    font-size: $font-size-h5;
+    margin: $md-pad 0 $xs-pad;
+    color: $text-header-sm;
+}
+
+h6 {
+    font-size: $font-size-h6;
+    margin: $md-pad 0 $xs-pad;
+    color: $text-header-sm;
+}
+
+small {
+    color: $text-ui;
+    vertical-align: bottom;
+}
+
+pre {
+    background: $grey;
+    color: $text-default;
+    display: block;
+    font-family: $monospace;
+    font-size: $font-size-base;
+    margin: $md-pad 0;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
+code {
+    color: $red;
+    font-family: $monospace;
+    font-size: $font-size-base;
+    background: $bg-light-well;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+    word-wrap: break-word;
+    display: inline;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 7px;
+    font-size: $font-size-base;
+}
+
+pre {
+    background: $bg-light-well;
+    padding-left: $sm-pad;
+    padding-right: $sm-pad;
+    border-radius: $sm-pad;
+    color: $red;
+    font-size: $font-size-base;
+    margin-bottom: $margin-default;
+}
+
+a:not(.media):not(.fn_top):not(img):not(div) {
+    text-decoration: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        border-bottom: 1px solid currentColor;
+    }
+}
+
+a.primary,
+.usr-content .page a:not(.media):not(.fn_top):not(img):not(div) {
+    color: $primary;
+    border-bottom: $border-link;
+    &:hover, &:focus, &:active {
+        color:$primary-active;
+    }
+}
+
+dl {
+    margin-bottom: $md-pad;
+}
+
+dd {
+    margin-left: $xlg-pad;
+}
+
+ul,
+ol {
+    margin-bottom: $margin-default;
+    padding-left: $xlg-pad;
+    vertical-align: baseline;
+}
+
+blockquote {
+    border-left: 3px solid $primary;
+    font-family: inherit;
+    margin-left: $md-pad;
+    padding-left: $md-pad;
+    padding: 0 1em;
+    font-size: 1.25rem;
+    font-weight: $font-weight-base;
+    font-style: normal;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+figcaption {
+    font-family: inherit;
+}
+
+u {
+    text-decoration: underline;
+}
+
+s {
+    text-decoration: line-through;
+}
+
+sup {
+    vertical-align: super;
+    line-height: 0;
+    font-size: 75%;
+}
+
+sub {
+    font-size: $font-size-small;
+    vertical-align: sub;
+}
+
+mark {
+    background: $yellow;
+}

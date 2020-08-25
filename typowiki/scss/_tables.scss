@@ -1,0 +1,45 @@
+table {
+    margin-bottom: $margin-default;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-collapse: collapse;
+    word-break: keep-all;
+}
+
+caption {
+    padding: $sm-pad 0;
+}
+
+thead th {
+    border: 0;
+    border-bottom: 2px solid $dividers;
+}
+
+tr {
+    margin-bottom: $sm-pad;
+}
+
+th,
+td {
+    padding: $sm-pad;
+    vertical-align: middle;
+}
+td {
+    border-bottom: 1px solid $dividers;
+}
+
+tfoot tr {
+    text-align: left;
+}
+
+tfoot td {
+    color: $text-ui;
+    font-size: $sm-pad;
+    font-style: italic;
+    padding: $md-pad $xs-pad;
+}
+.usr-content table .code {
+    display: inline;
+}

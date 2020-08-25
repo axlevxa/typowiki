@@ -1,0 +1,89 @@
+input[type=submit],
+input[type=reset],
+input[type=button],
+button {
+    background-color: transparent;
+    border: $border-width solid transparent;
+    border-radius: $br;
+    color: $black;
+    padding: $sm-pad $md-pad;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    line-height: 1.5;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    cursor: pointer;
+    font-size: $font-size-ui;
+}
+input[type=submit],
+button[type=submit],
+#media__sendbtn {
+    font-weight: $font-weight-strong;
+    border: $border-width solid $black;
+}
+
+.dark input[type=submit],
+.dark input[type=reset],
+.dark input[type=button],
+.dark button {
+    background-color: transparent;
+    color: $text-light;
+    border: $border-width solid $text-light;
+}
+
+
+.dark button:hover,
+.dark button:active,
+.dark button:focus {
+    background-color: $bg-dark-well !important;
+    border: $border-width solid $text-light !important;
+    color: $text-light;
+    transition: 0.5s box-shadow, 0.6s background-color, 0.6s border;
+}
+
+input[type=submit]::-moz-focus-inner,
+input[type=reset]::-moz-focus-inner,
+input[type=button]::-moz-focus-inner,
+button::-moz-focus-inner {
+    padding: 0;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover,
+input[type=button]:hover,
+button:hover {
+    background-color: $black;
+    border-color: $black;
+    color: $white;
+}
+
+input[type=submit]:not(:disabled):active,
+input[type=reset]:not(:disabled):active,
+input[type=button]:not(:disabled):active,
+button:not(:disabled):active {
+    background-color: $black;
+    border-color: $black;
+    color: $white;
+}
+
+input[type=submit]:focus,
+input[type=reset]:focus,
+input[type=button]:focus,
+button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem fade_out($primary, 0.5);
+}
+
+input[type=submit]:disabled,
+input[type=reset]:disabled,
+input[type=button]:disabled,
+button:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+    background-color: transparent;
+    border-color: $black;
+    color: $black;
+}

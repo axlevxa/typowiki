@@ -1,0 +1,230 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+select,
+textarea {
+    background: $bg-light-well;
+    background-clip: padding-box;
+    border: $border-width solid $bg-light-well;
+    border-bottom: $border-ui;
+    border-radius: $br;
+    color: $text-ui;
+    display: inline-block;
+    width: 100%;
+    padding: $sm-pad $md-pad;
+    line-height: 1.5;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    font-family: $font-family;
+    font-size: $font-size-ui;
+    margin-right: $sm-pad;
+}
+
+.dark input[type="text"],
+.dark input[type="password"],
+.dark input[type="email"],
+.dark input[type="url"],
+.dark input[type="date"],
+.dark input[type="month"],
+.dark input[type="time"],
+.dark input[type="datetime"],
+.dark input[type="datetime-local"],
+.dark input[type="week"],
+.dark input[type="number"],
+.dark input[type="search"],
+.dark input[type="tel"],
+.dark select,
+.dark textarea {
+    background: $bg-dark-well;
+    border: $border-width solid transparent;
+    border-bottom: $border-width solid $text-light;
+    color: $text-light;
+}
+
+input[type="color"],
+{
+    background: $white;
+    border: $border;
+    border-radius: $br;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input:not([type]) {
+    -webkit-appearance: none;
+    background: $bg-light-well;
+    background-clip: padding-box;
+    border: $border;
+    border-radius: $br;
+    color: $text-default;
+    display: block;
+    width: 100%;
+    padding: $sm-pad $md-pad;
+    line-height: 1.5;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    text-align: left;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+select:focus,
+textarea:focus {
+    background-color: #fff;
+    border-color: mix($primary, #fff);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem fade_out($primary, 0.75);
+}
+
+.dark input[type="text"]:focus,
+.dark input[type="password"]:focus,
+.dark input[type="email"]:focus,
+.dark input[type="url"]:focus,
+.dark input[type="date"]:focus,
+.dark input[type="month"]:focus,
+.dark input[type="time"]:focus,
+.dark input[type="datetime"]:focus,
+.dark input[type="datetime-local"]:focus,
+.dark input[type="week"]:focus,
+.dark input[type="number"]:focus,
+.dark input[type="search"]:focus,
+.dark input[type="tel"]:focus,
+.dark input[type="color"]:focus,
+.dark select:focus,
+.dark textarea:focus {
+    color: $text-light;
+    background-color: $bg-dark-well-active;
+}
+
+input:not([type]):focus {
+    background-color: #fff;
+    border-color: mix($primary, #fff);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem fade_out($primary, 0.75);
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+    outline: 1px thin $dividers;
+}
+
+input[type="text"][disabled],
+input[type="password"][disabled],
+input[type="email"][disabled],
+input[type="url"][disabled],
+input[type="date"][disabled],
+input[type="month"][disabled],
+input[type="time"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="week"][disabled],
+input[type="number"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="color"][disabled],
+select[disabled],
+textarea[disabled] {
+    background-color: $dividers;
+    color: $text-ui;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+input:not([type])[disabled] {
+    background-color: $dividers;
+    color: $text-ui;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+input[readonly],
+select[readonly],
+textarea[readonly] {
+    border-color: $dividers;
+    color: $text-ui;
+}
+
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid {
+    border-color: darken($red, 10);
+    color: $red;
+}
+
+input[type="file"]:focus:invalid:focus,
+input[type="radio"]:focus:invalid:focus,
+input[type="checkbox"]:focus:invalid:focus {
+    outline-color: $red;
+}
+
+select {
+    border: $border;
+    vertical-align: sub;
+}
+
+select:not([size]):not([multiple]) {
+    height: calc(40px);
+}
+
+select[multiple] {
+    height: auto;
+}
+
+label {
+    display: inline-block;
+    line-height: 2;
+    color: $text-ui;
+    font-size: $font-size-ui;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: $sm-pad 0;
+}
+
+fieldset li {
+    list-style: none;
+}
+
+legend {
+    border-bottom: $border;
+    color: $text-default;
+    display: block;
+    margin-bottom: $sm-pad;
+    padding: $sm-pad 0;
+    width: 100%;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+    display: inline;
+}

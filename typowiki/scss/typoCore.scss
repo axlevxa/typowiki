@@ -1,0 +1,990 @@
+@import '_variables.scss';
+
+/* Global
+==================================================== */
+
+input.button {
+    margin-right: 10px;
+}
+
+.mu.txt-24 {
+    font-size: 24px;
+}
+
+.dokuwiki a.urlextern,
+.dokuwiki a.windows,
+.dokuwiki a.mail,
+.dokuwiki a.mediafile,
+.dokuwiki a.interwiki {
+    background-image: none;
+    padding: 0px;
+}
+
+.dokuwiki a.wikilink2:link,
+.dokuwiki a.wikilink2:visited {
+    border-bottom: none;
+}
+
+.usr-content .page .dokuwiki a.wikilink2:hover,
+.usr-content .page .dokuwiki a.wikilink2:hover {
+    border-bottom: 1px dotted;
+}
+
+.action.media {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+
+/* .usr-content .page h1:before,
+.usr-content .page h2:before,
+.usr-content .page h3:before,
+.usr-content .page h4:before,
+.usr-content .page h5:before,
+.usr-content .page h6:before,
+.usr-content .fn_top:before {
+    scroll-margin-top: 5rem;
+    display: block;
+    content: "";
+    height: 70px;
+    margin: -70px 0 0;
+} */
+
+.no-outline {
+    outline: 0;
+}
+
+
+/* Navigation
+==================================================== */
+
+nav {
+    width: 100%;
+    z-index: 1000;
+    box-shadow: $box-shadow-default;
+    transition: 0.6s box-shadow;
+}
+
+@media (max-width: 575.98px) {
+    .td-header:hover {
+        box-shadow: $box-shadow-active;
+    }
+}
+
+nav .nav-bar {
+    background-color: $bg-dark-extra;
+    height: 65px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    color: $text-light;
+    padding-top: 6px;
+    overflow: hidden;
+}
+
+nav .nav-bar .container {
+    margin-top: 5px;
+}
+
+nav .nav-bar .nav-actions a {
+    text-decoration: none;
+    border-bottom: none !important;
+}
+
+nav .nav-bar .nav-brand {
+    float: left;
+    h2 {
+        font-size: 18px;
+        margin: 0;
+        margin-top: 13px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+nav .nav-bar .nav-brand h2 a {
+    border-bottom: none !important;
+    &:hover,
+    &:focus,
+    &:active {
+        border-bottom: $border-link !important;
+    }
+}
+
+nav .nav-bar .nav-actions {
+    color: $white;
+    text-align: right;
+}
+
+nav .nav-bar .nav-actions .nav-search {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 4px;
+}
+
+nav .nav-bar .nav-actions button {
+    font-weight: $font-weight-base;
+}
+
+@media (max-width: 767.98px) {
+    nav .nav-bar .nav-actions button {
+        padding: 10px 10px 10px 10px;
+        font-size: 0.8em;
+    }
+}
+
+nav .nav-bar .nav-item {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: $white;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 3px;
+    margin-left: 10px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    transition: $trans border;
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        text-decoration: none !important;
+        color: $white;
+        height: 30px;
+    }
+    &:focus,
+    &:active,
+    &:hover {
+        border: 1px solid $white;
+    }
+}
+
+@media (max-width: 767.98px) {
+    nav .nav-bar .nav-item {
+        margin-left: 5px;
+    }
+}
+
+nav .nav-bar .nav-usericon {
+    background-color: $accent;
+    text-transform: uppercase;
+    line-height: 35px;
+    span {
+        line-height: 31px;
+        font-size: 20px;
+    }
+}
+
+nav .nav-bar .nav-searchicon {
+    span {
+        line-height: 29px;
+    }
+}
+
+nav .nav-expanded #search,
+nav .nav-expanded #user {
+    display: none;
+}
+
+nav .nav-expanded-inner {
+    background-color: $bg-dark;
+    color: $text-light;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: $font-size-ui;
+}
+
+nav .nav-expanded-inner .ui-title {
+    margin-top: 7px;
+}
+
+nav .nav-expanded-inner ul {
+    padding: 0;
+    list-style-type: none;
+    margin-top: 0;
+}
+
+nav .nav-expanded-inner li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+nav .nav-expanded-inner li a {
+    text-decoration: none;
+}
+
+nav .nav-expanded-inner li a:hover,
+nav .nav-expanded-inner li a:focus,
+nav .nav-expanded-inner li a:active {
+    text-decoration: inherit;
+}
+
+nav .nav-expanded #dw__search {
+    vertical-align: middle;
+}
+
+nav .nav-expanded #qsearch__in {
+    max-width: 60%;
+}
+
+.dokuwiki form.search div.ajax_qsearch {
+    top: 20px;
+    left: 0;
+    width: 15em;
+    z-index: 20;
+    border-radius: $br;
+    box-shadow: $box-shadow-default;
+    li {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    nav .nav-expanded .right {
+        text-align: right;
+    }
+    nav .nav-expanded-inner li {
+        text-align: right;
+    }
+}
+
+
+/* UI Elements
+==================================================== */
+
+.ui {
+    font-size: $font-size-ui;
+}
+
+.ui-title {
+    font-weight: 600;
+}
+
+
+/* User content ==================================================== */
+
+.dokuwiki .secedit {
+    display: none;
+}
+
+.usr-content {
+    padding-bottom: 100px;
+    bottom: 0;
+}
+
+.usr-inner {
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 767.98px) {
+    .usr-content {
+        padding-top: 19px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .usr-content {
+        padding-top: 15px;
+    }
+    .usr-content .usr-inner {
+        margin-top: 70px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+
+/* @media (min-width: 992px) and (max-width: 1199.98px) { 
+    .usr-container {
+        max-width: 767.98px;
+    }
+} */
+
+.breadcrumbs {
+    font-size: $font-size-ui;
+    line-height: 1.7em;
+    .bchead {
+        display: none;
+    }
+}
+
+.breadcrumbs:not(span) {
+    color: transparent;
+    user-select: none;
+}
+
+.breadcrumbs bdi {
+    display: inline-block;
+    color: $text-default;
+}
+
+.breadcrumbs bdi:not(:first-child)::before {
+    padding-left: 5px;
+    content: " ";
+}
+
+.breadcrumbs bdi::after {
+    content: "\E705";
+    font-family: 'microns';
+    padding-left: 15px;
+}
+
+@media only screen and (max-width: 767.98px) {
+    .breadcrumbs {
+        font-size: $font-size-small;
+    }
+}
+
+.usr-content .page {
+    border-top: $border-bold;
+    padding-top: $lg-pad;
+}
+
+.usr-content h1:first-child {
+    margin-top: 0px;
+    margin-top: 0;
+}
+
+.usr-content .page p img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.usr-content h1:not(:first-child) {
+    margin-top: $xlg-pad;
+}
+
+.usr-content h2,
+.usr-content h3,
+.usr-content h4 {
+    margin-top: $xlg-pad;
+}
+
+.usr-content h5 {
+    margin-top: $xlg-pad;
+}
+
+.usr-content p.caption {
+    text-align: center;
+    color: #898989;
+    font-size: 0.9em;
+}
+
+@media only screen and (min-width: 768px) { 
+    .usr-content .col-side {
+        padding-left: 30px;
+    }
+}
+
+/*.nav-side {
+    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
+    top: $lg-pad;
+}
+
+.nav-side .nav-side-inner {
+    height: 90vh;
+    overflow: scroll;
+} */
+
+.nav-side #dw__toc,
+.nav-side #dokuwiki__aside {
+    /* position: -webkit-sticky;
+    position: sticky;
+    top: 30px;
+    z-index: 1020; */
+    background: none;
+    font-size: $font-size-ui;
+    /* overflow: scroll;
+    height: 90vh; */
+    float: none;
+    margin: 0;
+    border-top: $border-width solid $text-default;
+    padding-top: $lg-pad;
+    width: 100%;
+}
+
+@media only screen and (max-width: 767.98px) { 
+    .nav-side #dw__toc,
+    .nav-side #dokuwiki__aside {
+        margin-top: $lg-pad;
+    }
+}
+
+.nav-side #dw__toc {
+    margin-bottom: 40px !important
+}
+
+.nav-side #dw__toc a,
+.nav-side #dokuwiki__aside a {
+    text-decoration: none;
+    color: $text-ui;
+    line-height: $line-height-cond !important;
+}
+
+.nav-side #dw__toc h3,
+.nav-side #dokuwiki__aside h3 {
+    font-size: $font-size-ui;
+    color: $text-default;
+    font-weight: 700;
+    margin-top: 4px;
+    margin-bottom: 18px;
+}
+
+.nav-side h3.toggle {
+    padding: 0px;
+}
+
+.nav-side #dw__toc>div {
+    padding: 0px;
+}
+
+.nav-side ul li {
+    margin-bottom: 5px;
+}
+
+.back-to-top-wrapper {
+    position: absolute;
+    top: 80vh;
+    bottom: -5em;
+    pointer-events: none;
+}
+
+.mode_profile,
+.mode_register,
+.mode_login,
+.mode_resendpwd {
+    .back-to-top-wrapper {
+        display: none;
+    }
+}
+
+.back-to-top-link {
+    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
+    pointer-events: all;
+    top: calc(100vh - 10rem);
+    display: inline-block;
+    -webkit-transition: -webkit-transform 80ms ease-in;
+    transition: -webkit-transform 80ms ease-in;
+    transition: transform 80ms ease-in;
+    transition: transform 80ms ease-in, -webkit-transform 80ms ease-in;
+    color: $text-ui;
+    font-size: $font-size-ui;
+    background: $paper;
+    background: linear-gradient(180deg, rgba(251, 251, 251, 0) 0%, rgba(251, 251, 251, 1) 43%);
+}
+
+@media only screen and (max-width: 767.98px) { 
+    .back-to-top-wrapper {
+        display: none;
+    }
+}
+
+/* Poor compatibility gradient version
+.back-to-top-link::after {
+	background: linear-gradient(180deg, rgba(251,251,251,0) 0%, rgba(251,251,251,1) 43%);
+	content: "";
+	width: 100%;
+	display: block;
+	top: -100px;
+	position: absolute;
+	min-width: 175px;
+	z-index: -100;
+	height: 200px;
+} */
+
+div.insitu-footnote {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: $white;
+    background-color: rgba(0, 0, 0, 0.77);
+    border-radius: 7px;
+    max-height: 50px;
+    overflow: scroll;
+}
+
+.usr-content .fn_top {
+    margin-right: 3px;
+    color: $primary;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+}
+
+.usr-content .fn_bot {
+    color: $text-ui;
+    margin-right: 5px;
+}
+
+.usr-content a.fn_bot {
+    text-decoration: none;
+}
+
+.dokuwiki div.footnotes {
+    margin-top: 50px;
+    border-top: $border-width solid $dividers;
+    border-radius: 1px;
+    margin-bottom: 5em;
+}
+
+.usr-content .fn {
+    margin-bottom: 2rem;
+}
+
+.usr-content .fn .content {
+    color: #333840;
+}
+
+.JSpopup,
+#link__wiz {
+    margin-top: 20px;
+}
+
+
+/* @media (prefers-color-scheme: dark) {
+    .usr-content .fn .content, .usr-content .fn_bot {
+        color: $text-light;
+    }
+    .dokuwiki div.footnotes {
+        border-top: 1px solid rgba(255, 255, 255, 0.36);
+    }
+    .usr-content .fn_bot {
+        color: $text-light;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .mode_show .usr-content {
+        background-color: $bg-dark;
+    }
+    .mode_show .usr-content h1, .mode_show .usr-content h2 {
+        color: $white;
+    }
+    .mode_show .usr-content h3, .mode_show .usr-content h4, .mode_show .usr-content h5 {
+        color: $text-light-med;
+    }
+    .mode_show .usr-content p, .mode_show .usr-content ul, .mode_show .usr-content ol {
+        color: $text-light;
+    }
+    .mode_show .usr-content blockquote {
+        color: $text-light;
+    }
+    .mode_show .usr-content .table {
+        color: $text-light;
+    }
+    .mode_show .usr-content p code, .mode_show .usr-content table code, .mode_show .usr-content pre.code {
+        background: $bg-dark-well !important;
+    }
+} */
+
+
+/* Edit Page
+==================================================== */
+
+.dokuwiki .editBox {
+    margin-top: $xlg-pad;
+    border-top: $border-bold;
+    padding-top: $lg-pad;
+}
+
+.dokuwiki .editBar .editButtons {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.mode_edit #draft__status, .mode_preview #draft__status,
+.mode_draft #draft__status {
+    color: $primary;
+    font-size: $font-size-ui;
+}
+
+#edit__summary.missing {
+    background-color: $red-light;
+}
+
+.mode_edit button[name="do[cancel]"], .mode_preview button[name="do[cancel]"] {
+    font-weight: $font-weight-base;
+}
+
+.mode_edit .toolbutton,
+.mode_preview .toolbutton,
+div.picker button.toolbutton {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid transparent;
+    &:active,
+    &:hover,
+    &:focus {
+        border: $border-ui;
+        background-color: $bg-light-well;
+        box-shadow: none;
+    }
+}
+
+.dokuwiki div.preview,
+.dokuwiki .diff_sidebyside {
+    border: none;
+    padding: $sm-pad;
+    background-color: $white;
+    box-shadow: $box-shadow-default;
+    border-radius: $br;
+}
+
+.dokuwiki h1#preview {
+    padding-top: $xlg-pad;
+    border-top: $border-bold;
+}
+
+/* .mode_edit .level1, .mode_preview .level1 {
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: $border-ui;
+    border-radius: 7px;
+    transition: 1s height, 0.7s background-color;
+} */
+
+.mode_edit .usr-content .page .license,
+.mode_preview .usr-content .page .license {
+    color: $text-ui;
+    font-size: $font-size-ui;
+    line-height:$line-height-cond;
+}
+
+
+/* User Pages ==================================================== */
+
+.mode_profile .usr-content fieldset,
+.mode_register .usr-content fieldset,
+.mode_login .usr-content fieldset,
+.mode_resendpwd .usr-content fieldset {
+    margin-top: 70px;
+    width: 100%;
+    max-width: 500px;
+    border: 2px;
+    border-radius: 7px;
+}
+
+.mode_profile .usr-content fieldset legend,
+.mode_register .usr-content fieldset legend,
+.mode_login .usr-content fieldset legend,
+.mode_resendpwd .usr-content fieldset legend {
+    font-size: $font-size-h4;
+    font-weight: $font-weight-strong;
+    background: transparent;
+    border-radius: 0px;
+    padding: 0px;
+    border-bottom: none;
+    text-align: left;
+    border-top: $border-bold;
+    padding-top: $lg-pad;
+}
+
+.dokuwiki label.block select,
+.dokuwiki label.block input.edit {
+    width: 100%;
+}
+
+.dokuwiki label:not(.simple).block {
+    text-align: left;
+    font-weight: 300;
+}
+
+#config__manager fieldset {
+    margin: 0px;
+    max-width: 100%;
+    padding: 0px;
+    font-size: 0.9em;
+}
+
+
+/* Discussion Plugin
+==================================================== */
+
+div.dokuwiki div.comment_wrapper {
+    background-color: transparent;
+    padding: 0px;
+    margin-top: 90px;
+    border-top: $border-bold;
+}
+
+div.dokuwiki div.comment_wrapper #discussion__section {
+    color: inherit;
+    border-bottom: none !important;
+    cursor: default;
+}
+
+div.dokuwiki div.comment_text:not(textarea) {
+    font-size: $font-size-ui;
+    color: $text-ui;
+}
+
+div.dokuwiki div.comment_wrapper #discussion__comment_text {
+    height: 100px;
+}
+
+div.dokuwiki div.comment_wrapper h2:first-child {
+    margin-top: 20px;
+    font-size: $font-size-h5;
+}
+
+div.dokuwiki .comment_body {
+    border: 0;
+    background-color: $paper-active;
+    padding: 10px;
+    border-radius: $br;
+}
+
+div.dokuwiki div.comment_buttons {
+    float: left;
+    cursor: pointer;
+    margin-top: 0px;
+    padding-bottom: 1.4em;
+}
+
+div.dokuwiki div.comment_buttons input.button {
+    font-size: $font-size-ui;
+    color: $primary;
+    border: none;
+    background: none;
+    border-radius: 0px;
+    padding: 0px;
+    border-bottom: 1px solid transparent;
+    font-weight: $font-weight-base;
+    &:hover,
+    &:focus,
+    &:active {
+        background: none;
+        color: $primary-active;
+        border-bottom: 1px solid $primary-active;
+    }
+}
+
+div.dokuwiki .comment_head span.author {
+    background: transparent;
+    padding: inherit;
+    font-weight: 700;
+}
+
+div.dokuwiki .comment_head abbr.published {
+    background: transparent;
+    padding: inherit;
+}
+
+div.dokuwiki #discussion__comment_form label input.edit {
+    width: 100%;
+}
+
+
+/* Footer
+==================================================== */
+
+footer {
+    background-color: $paper-active;
+    text-align: left;
+    font-size: $font-size-ui;
+    color: $text-ui;
+    margin-bottom: 0px;
+    line-height: $line-height-cond;
+    position: relative;
+}
+
+footer .doc,
+footer .license {
+    margin-bottom: $md-pad;
+}
+
+ul.ul-raw,
+.ul-raw ul {
+    list-style: none;
+    padding: 0px;
+    margin-top: 0;
+}
+
+.ul-raw li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.ul-raw a, .license a {
+    color: $text-ui;
+    border-bottom: $border-link !important;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $text-default;
+    }
+}
+
+footer .license img {
+    display: block;
+}
+
+/* Captcha Plugin
+==================================================== */
+#plugin__captcha_wrapper {
+    border-radius: $br;
+    border: 1px solid $dividers;
+}
+#plugin__captcha_wrapper label {
+    display: block;
+}
+#plugin__captcha_wrapper:not(input):not(label) {
+	user-select: none;
+}
+
+
+/* NSPages Plugin
+==================================================== */
+
+.catpageheadline {
+    text-decoration: none;
+    font-size: inherit;
+    margin: auto;
+}
+
+.nspagesPicturesModeTitle {
+    overflow: inherit;
+    background-color: transparent;
+    margin-top: 0;
+    margin-left: 0;
+    font-family: inherit;
+    color: $text-default;
+    background: $bg-light;
+    font-weight: 700;
+    line-height: 1.6em;
+    padding: 3px 3px 13px 0px;
+    max-width: none;
+    border-bottom: $border-bold;
+}
+
+div.nspagesPicturesModeMain a {
+    padding: 0px;
+    background-color: inherit;
+    border-bottom: none !important;
+    height: auto;
+    width: 230px;
+    border-top: 1px solid black;
+    margin: 10px 10px 0px 0px;
+}
+
+@media only screen and (max-width: 767.98px) {
+    div.nspagesPicturesModeMain a {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+div.nspagesPicturesModeMain a {
+    &:focus,
+    &:hover,
+    &:active {
+        border-bottom: $border-link;
+    }
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+div.nspagesPicturesModeImg {
+    padding: 0px;
+    max-width: 100%;
+    width: 100%;
+    background-color: $paper-active;
+    border-bottom-left-radius: $br;
+    border-bottom-right-radius: $br;
+    overflow: hidden;
+}
+
+
+/* Print
+==================================================== */
+
+@media print {
+    body {
+        font-size: 1em;
+    }
+    .col-side {
+        display: none;
+    }
+    .col-main {
+        min-width: 100%;
+    }
+    nav .nav-actions {
+        display: none;
+    }
+    nav {
+        box-shadow: none;
+    }
+    nav .nav-bar {
+        background-color: transparent;
+        color: black;
+    }
+    nav .nav-expanded {
+        display: none;
+    }
+}
+
+
+/* Media Manager
+==================================================== */
+
+#media__popup_content button.button {
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: $border-ui;
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: $bg-light-well;
+        border: $border-ui;
+    }
+}
+#media__popup_content button.selected {
+    background-color: $bg-light-well;
+    border: $border-ui;
+}
+
+#media__content .qq-uploader {
+    border-radius: 7px;
+    background-color: $white;
+    color: $primary;
+    padding: $sm-pad;
+    transition: all 0.8s;
+}
+
+#media__content .qq-upload-drop-area {
+    position: relative;
+    min-height: 100px;
+    display: block !important;
+    background-color: transparent;
+    border-radius: 7px;
+    outline: 2px dashed $primary;
+}
+
+#media__content .qq-upload-drop-area-active {
+    transition: $trans background-color, $trans color;
+    background-color: $primary;
+    color: $white;
+    outline: 1px dashed $white;
+}
+
+#media__manager .qq-upload-button {
+    color: primary;
+}
