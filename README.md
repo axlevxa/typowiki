@@ -1,11 +1,13 @@
 # typowiki
-TypoWiki - Simple DokuWiki Theme
+Simple, responsive DokuWiki Theme
 
 ## Modular and structural
 
 I have mixed feelings about doing a theme in the modernist vein. Nonetheless, the idea is to make a wiki as simple and easy-to-use as an evil corporate platform like Google Docs. It is designed to match the look and feel people are familiar with and be comfy to read on a desktop or phone.
 
 ![Screenshot of typowiki theme index page](preview.png)
+
+(Pictured with the [NSPages](https://www.dokuwiki.org/plugin:nspages) plugin.)
 
 ## Installation
 
@@ -44,6 +46,10 @@ $lang['loggedinas']      = '';
 I made some custom retina icons for the edit bar (based on [Microns](https://github.com/stephenhutchings/microns)). They're not the greatest, but they are a bit more tasteful to our 2020 sensibilities than the default ones. You can find them in the "extras" folder. To use, just move the png files to `lib/images/toolbar/`. Keep a backup of the standard ones to be safe.
 
 ![Screenshot of wiki edit bar icons](preview3.png)
+
+## Plugin compatibility
+
+Tested with [NSPages](https://www.dokuwiki.org/plugin:nspages) and [Discussion](https://www.dokuwiki.org/plugin:discussion).
 
 ## That's it...
 
