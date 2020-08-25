@@ -41,7 +41,7 @@ $lang['loggedinas']      = '';
 
 ### Custom Editor Icons
 
-I made some custom retina icons for the edit bar. They're not the greatest, but they are a bit more tasteful to our 2020 sensibilities than the default ones. You can find them in the "extras" folder. To use, just move the png files to `lib/images/toolbar/`. Keep a backup of the standard ones to be safe.
+I made some custom retina icons for the edit bar (based on [Microns](https://github.com/stephenhutchings/microns)). They're not the greatest, but they are a bit more tasteful to our 2020 sensibilities than the default ones. You can find them in the "extras" folder. To use, just move the png files to `lib/images/toolbar/`. Keep a backup of the standard ones to be safe.
 
 ![Screenshot of wiki edit bar icons](preview3.png)
 
