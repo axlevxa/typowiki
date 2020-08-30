@@ -35,21 +35,6 @@ input.button {
     color: inherit;
 }
 
-
-/* .usr-content .page h1:before,
-.usr-content .page h2:before,
-.usr-content .page h3:before,
-.usr-content .page h4:before,
-.usr-content .page h5:before,
-.usr-content .page h6:before,
-.usr-content .fn_top:before {
-    scroll-margin-top: 5rem;
-    display: block;
-    content: "";
-    height: 70px;
-    margin: -70px 0 0;
-} */
-
 .no-outline {
     outline: 0;
 }
@@ -275,7 +260,7 @@ nav .nav-expanded #qsearch__in {
 
 .usr-content {
     padding-bottom: 100px;
-    bottom: 0;
+    min-height: calc(100vh - 200px);
 }
 
 .usr-inner {

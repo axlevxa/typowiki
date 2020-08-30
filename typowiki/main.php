@@ -17,7 +17,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
   lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
 <head>
     <meta charset="UTF-8" />
-    <title>【 <?php tpl_pagetitle() ?> 】 <?php echo strip_tags($conf['title']) ?></title>
+    <title><?php tpl_pagetitle() ?> | <?php echo strip_tags($conf['title']) ?></title>
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
     <?php tpl_metaheaders() ?>
     <meta name="viewport" content="width=device-width,initial-scale=1" />

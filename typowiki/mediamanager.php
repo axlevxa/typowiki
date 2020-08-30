@@ -15,7 +15,7 @@ header('X-UA-Compatible: IE=edge,chrome=1');
   lang="<?php echo $conf['lang']?>" dir="<?php echo $lang['direction'] ?>" class="popup no-js">
 <head>
     <meta charset="UTF-8" />
-    <title>【 <?php echo hsc($lang['mediaselect'])?> 】 <?php echo strip_tags($conf['title'])?>
+    <title><?php echo hsc($lang['mediaselect'])?> | <?php echo strip_tags($conf['title'])?>
     </title>
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
     <?php tpl_metaheaders()?>
