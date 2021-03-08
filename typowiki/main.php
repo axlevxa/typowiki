@@ -1,7 +1,7 @@
 <?php
 /**
  * Typowiki
- *  
+ *
  * @author   axlevxa
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
@@ -43,10 +43,14 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
             <div class="nav-bar dark">
                 <div class="container">
                     <div class="row">
-                    <div class="col-4 col-md-7 nav-brand">
-                        <h2><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h2>
+                    <div class="col-3 nav-brand">
+                      <?php /* Uncomment the line below for a custom logo. Upload a SQUARE (70x70) logo into the data/media folder (root of the media manager) and replace 'logo.png' accordingly: */ ?>
+                      <?php
+                      $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png', ':wiki:dokuwiki-128.png'));
+                      tpl_link(wl(),'<img src="'.$logo.'" alt="" />','id="wiki-logo" accesskey="h" title="[H]"') ?>
+                      <h2><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h2>
                     </div>
-                    <div class="col-8 col-md-5 nav-actions">
+                    <div class="col-9 nav-actions">
                         <?php tpl_button('edit')?>
                         <a onclick="togglediv('search')" aria-label="<?php echo $lang['btn_search'] ?>" tabindex="0" class="no-outline">
                             <div class="nav-item nav-searchicon">

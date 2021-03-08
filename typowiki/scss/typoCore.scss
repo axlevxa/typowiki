@@ -11,23 +11,19 @@ input.button {
     font-size: 24px;
 }
 
-.dokuwiki a.urlextern,
+/* .dokuwiki a.urlextern,
 .dokuwiki a.windows,
 .dokuwiki a.mail,
 .dokuwiki a.mediafile,
 .dokuwiki a.interwiki {
     background-image: none;
     padding: 0px;
-}
+} */
 
-.dokuwiki a.wikilink2:link,
-.dokuwiki a.wikilink2:visited {
-    border-bottom: none;
-}
-
-.usr-content .page .dokuwiki a.wikilink2:hover,
-.usr-content .page .dokuwiki a.wikilink2:hover {
-    border-bottom: 1px dotted;
+.dokuwiki a.wikilink2,
+.usr-content .page a.wikilink2 {
+    border-bottom: 0px;
+    border-bottom: $border-link-weight dotted currentColor !important;
 }
 
 .action.media {
@@ -38,7 +34,6 @@ input.button {
 .no-outline {
     outline: 0;
 }
-
 
 /* Navigation
 ==================================================== */
@@ -54,6 +49,15 @@ nav {
     .td-header:hover {
         box-shadow: $box-shadow-active;
     }
+}
+
+nav #wiki-logo {
+  vertical-align: middle;
+}
+
+nav #wiki-logo img {
+  height: 35px;
+  width: 35px;
 }
 
 nav .nav-bar {
@@ -85,6 +89,7 @@ nav .nav-bar .nav-brand {
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        display: inline-block;
     }
 }
 
@@ -153,6 +158,9 @@ nav .nav-bar .nav-item {
 @media (max-width: 767.98px) {
     nav .nav-bar .nav-item {
         margin-left: 5px;
+    }
+    nav .nav-bar h2 {
+      display: none;
     }
 }
 
@@ -239,7 +247,6 @@ nav .nav-expanded #qsearch__in {
     }
 }
 
-
 /* UI Elements
 ==================================================== */
 
@@ -289,7 +296,7 @@ nav .nav-expanded #qsearch__in {
 }
 
 
-/* @media (min-width: 992px) and (max-width: 1199.98px) { 
+/* @media (min-width: 992px) and (max-width: 1199.98px) {
     .usr-container {
         max-width: 767.98px;
     }
@@ -365,7 +372,7 @@ nav .nav-expanded #qsearch__in {
     font-size: 0.9em;
 }
 
-@media only screen and (min-width: 768px) { 
+@media only screen and (min-width: 768px) {
     .usr-content .col-side {
         padding-left: 30px;
     }
@@ -400,7 +407,7 @@ nav .nav-expanded #qsearch__in {
     width: 100%;
 }
 
-@media only screen and (max-width: 767.98px) { 
+@media only screen and (max-width: 767.98px) {
     .nav-side #dw__toc,
     .nav-side #dokuwiki__aside {
         margin-top: $lg-pad;
@@ -472,7 +479,7 @@ nav .nav-expanded #qsearch__in {
     background: linear-gradient(180deg, rgba(251, 251, 251, 0) 0%, rgba(251, 251, 251, 1) 43%);
 }
 
-@media only screen and (max-width: 767.98px) { 
+@media only screen and (max-width: 767.98px) {
     .back-to-top-wrapper {
         display: none;
     }
@@ -850,7 +857,7 @@ footer .license img {
     color: $text-default;
     background: $bg-light;
     font-weight: 700;
-    line-height: 1.6em;
+    line-height: 1.4em;
     padding: 3px 3px 13px 0px;
     max-width: none;
     border-bottom: $border-bold;
@@ -894,6 +901,21 @@ div.nspagesPicturesModeImg {
     overflow: hidden;
 }
 
+/* Caption plugin
+==================================================== */
+
+div.caption {
+  margin-left: 0px;
+  border-left: 0px;
+  font-size: 0.9em;
+  line-height: 1.6em;
+  margin-top: $margin-default;
+}
+
+div.figure {
+  background-color: darken($paper, 4%);
+  padding: $sm-pad;
+}
 
 /* Print
 ==================================================== */
