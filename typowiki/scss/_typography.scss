@@ -8,7 +8,7 @@ body {
 
 p {
     margin: 0;
-    margin-bottom: $md-pad;
+    margin-bottom: $lg-pad;
 }
 
 b, strong {
@@ -121,16 +121,24 @@ a:not(.media):not(.fn_top):not(img):not(div) {
     &:hover,
     &:focus {
         text-decoration: none;
-        border-bottom: 1px solid currentColor;
+        border-bottom: $border-link;
     }
 }
 
 a.primary,
-.usr-content .page a:not(.media):not(.fn_top):not(img):not(div) {
+.usr-content .page a:not(.media):not(.fn_top):not(img):not(div),
+a.mediafile {
     color: $primary;
+    text-decoration: none;
     border-bottom: $border-link;
     &:hover, &:focus, &:active {
         color:$primary-active;
+    }
+    &:visited {
+      color: $link-visited-color;
+      &:hover, &:focus, &:active {
+          color:darken($link-visited-color, 15%);
+      }
     }
 }
 
@@ -149,13 +157,21 @@ ol {
     vertical-align: baseline;
 }
 
+.usr-content {
+  ul, ol {
+    li {
+      margin-bottom: $sm-pad;
+    }
+  }
+}
+
 blockquote {
     border-left: 3px solid $primary;
     font-family: inherit;
     margin-left: $md-pad;
     padding-left: $md-pad;
     padding: 0 1em;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: $font-weight-base;
     font-style: normal;
     margin-top: 2rem;

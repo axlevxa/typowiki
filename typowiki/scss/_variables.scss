@@ -58,7 +58,10 @@ $dividers: $grey-200 !default;
 
 //Links
 $link-color: $primary !default;
-$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-color: $primary-active !default;
+$link-visited-color: $primary !default;
+$link-decoration: underline;
+$link-decoration-thickness: 2px;
 
 //Font
 $font-family: "inter-web",
@@ -91,14 +94,15 @@ $font-size-h5: 1.1em !default;
 $font-size-h6: 1.0em !default;
 $font-weight-base: 300;
 $font-weight-strong: 700;
-$line-height-base: 1.7em !default;
+$line-height-base: 1.62em !default;
 $line-height-cond: 1.5em !default;
 $letter-spacing-base: -0.2px !default;
 
 //Borders
 $border-width: 1px;
 $border: 1px solid $dividers !default;
-$border-link: 1px solid currentColor;
+$border-link-weight: 1.5px;
+$border-link: $border-link-weight solid currentColor;
 $border-ui: 1px solid $text-ui;
 $border-bold: 1px solid $text-default;
 $box-shadow-default: 0 1px 7px 0 rgba(0,0,0,0.20);
