@@ -1,7 +1,7 @@
 base     typowiki
 author   axlevxa
 email    67394526+axlevxa@users.noreply.github.com
-date     2021-07-03
+date     2021-06-03
 name     TypoWiki
 desc     A simplified, modern DokuWiki experience
 url      
