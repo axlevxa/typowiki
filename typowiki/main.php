@@ -43,70 +43,49 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
             <div class="nav-bar dark">
                 <div class="container">
                     <div class="row">
-                    <div class="col-4 col-md-6 col-lg-7 nav-brand">
+                    <div class="col-3 col-md-6 col-lg-7 nav-brand">
                       <?php /* Uncomment the line below for a custom logo. Upload a SQUARE (70x70) logo into the data/media folder (root of the media manager) and replace 'logo.png' accordingly: */ ?>
                       <?php
                       $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png', ':wiki:dokuwiki-128.png'));
                       tpl_link(wl(),'<img src="'.$logo.'" alt="" />','id="wiki-logo" accesskey="h" title="[H]"') ?>
                       <h2><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h2>
                     </div>
-                    <div class="col-8 col-md-6 col-lg-5 nav-actions">
-                        <?php tpl_button('edit')?>
-                        <a onclick="togglediv('search')" aria-label="<?php echo $lang['btn_search'] ?>" tabindex="0" class="no-outline">
-                            <div class="nav-item nav-searchicon">
-                                <span>
-                                    <span class="mu mu-search txt-24"></span>
-                                </span>
-                            </div>
-                        </a>
-                        <a onclick="togglediv('user')" aria-label="<?php echo $lang['profile'] ?>" tabindex="0" class="no-outline">
-                            <div class="nav-item nav-searchicon">
-                                    <span class="mu mu-user txt-24"></span>
-                            </div>
-                        </a>
+                    <div class="col-9 col-md-6 col-lg-5 nav-actions">
+                        <span id="doku-action-btn"><?php tpl_button('edit')?></span>
+                        <button id="menu-toggle" onclick="togglediv('menu_unified')"><?php echo tpl_getLang('uni_menu') ?> <span class="mu mu-menu txt-12" aria-hidden="true"></span></button>
                     </div>
 
                     </div>
                 </div>
             </div>
         <ul class="a11y skip">
-                    <li><a href="#dokuwiki__content"><?php echo $lang['skip_to_content'] ?></a></li>
+            <a href="#dokuwiki__content"><?php echo $lang['skip_to_content'] ?></a>
         </ul>
         <div class="nav-expanded dark">
-            <div id="search" class="nav-expanded-inner">
+            <div id="menu_unified" class="nav-expanded-inner">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-4 left">
-                            <span class="ui-title"><?php echo $lang['btn_search'] ?></span>
-                        </div>
-                        <div class="col-sm-8 right">
+                        <div class="col-sm-7 left">
+                            <span class="mu mu-search menu-icon" aria-hidden="true"></span>
                             <?php tpl_searchform() ?>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div id="user" class="nav-expanded-inner">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4 left">
-                            <?php
-                                if (!empty($_SERVER['REMOTE_USER'])) {
-                                    echo '<span class="ui-title">';
-                                    tpl_userinfo(); /* 'Logged in as ...' */
-                                    echo '</span>';
-                                }
-                            ?>
-                        </div>
-                        <div class="col-sm-8 right">
-                            <ul role="navigation">
-                                <?php tpl_toolsevent('usertools', array(
-                                    'userpage'  => _tpl_action('userpage', 1, 'li', 1),
-                                    'profile'   => tpl_action('profile', 1, 'li', 1),
-                                    'register'  => tpl_action('register', 1, 'li', 1),
-                                    'login'     => tpl_action('login', 1, 'li', 1),
-                                    'admin'     => tpl_action('admin', 1, 'li', 1),
-                                )); ?>
-                            </ul>
+                        <div class="col-sm-5 right">
+                          <span class="mu mu-user menu-icon" aria-hidden="true"></span><?php
+                              if (!empty($_SERVER['REMOTE_USER'])) {
+                                  echo '<p class="ui-title">';
+                                  tpl_userinfo(); /* 'Logged in as ...' */
+                                  echo '</p>';
+                              }
+                          ?>
+                          <ul role="navigation">
+                              <?php tpl_toolsevent('usertools', array(
+                                  'userpage'  => _tpl_action('userpage', 1, 'li', 1),
+                                  'profile'   => tpl_action('profile', 1, 'li', 1),
+                                  'register'  => tpl_action('register', 1, 'li', 1),
+                                  'login'     => tpl_action('login', 1, 'li', 1),
+                                  'admin'     => tpl_action('admin', 1, 'li', 1),
+                              )); ?>
+                          </ul>
                         </div>
                     </div>
                 </div>

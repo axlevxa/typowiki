@@ -80,22 +80,14 @@ img {
 }
 
 ::selection {
-	color: $white;
-	background: $primary;
+    color: $white;
+    background: $primary;
 }
 
-/* @media screen and (max-width: $small-breakpoint) {
-    article,
-    section,
-    aside {
-        clear: both;
-        display: block;
-        max-width: 100%;
-    }
-    img {
-        margin-right: $md-pad;
-    }
-} */
+:focus {
+    outline: .125rem solid $focus;
+    outline-offset: .125rem;
+}
 
 embed,
 iframe,

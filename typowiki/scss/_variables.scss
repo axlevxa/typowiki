@@ -1,5 +1,5 @@
 //Basic stylings
-$br: 4px !default;
+$br: 4px !default; // Border radius
 $xs-pad: 4px !default;
 $sm-pad: 10px !default;
 $md-pad: 18px !default;
@@ -36,6 +36,7 @@ $yellow: #ffeb3b !default;
 $grey: #f7f7f9 !default;
 $white: #fff !default;
 $black: #000 !default;
+$yellow_orange: #e3a122 !default;
 
 //Derived
 $bg-light: $paper;
@@ -44,6 +45,7 @@ $bg-dark: $grey-800;
 $bg-dark-extra: $grey-900;
 $bg-dark-well: $grey-700;
 $bg-dark-well-active: $grey-600;
+$focus: $yellow_orange;
 
 //Text
 $text-default: $grey-800 !default;

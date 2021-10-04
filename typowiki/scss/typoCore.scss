@@ -11,15 +11,6 @@ input.button {
     font-size: 24px;
 }
 
-/* .dokuwiki a.urlextern,
-.dokuwiki a.windows,
-.dokuwiki a.mail,
-.dokuwiki a.mediafile,
-.dokuwiki a.interwiki {
-    background-image: none;
-    padding: 0px;
-} */
-
 .dokuwiki a.wikilink2,
 .usr-content .page a.wikilink2 {
     border-bottom: 0px;
@@ -33,6 +24,20 @@ input.button {
 
 .no-outline {
     outline: 0;
+}
+
+/* Skip Link
+==================================================== */
+.skip.a11y:focus {
+  left: 10px !important;
+  top: 10px !important;
+  width: auto !important;
+  height: auto !important;
+  color: $text-default;
+  background-color: $grey-100;
+  border-radius: $br;
+  padding: $xs-pad;
+  margin-top: 0px;
 }
 
 /* Navigation
@@ -53,6 +58,7 @@ nav {
 
 nav #wiki-logo {
   vertical-align: middle;
+  display: inline-block;
 }
 
 nav #wiki-logo img {
@@ -75,9 +81,8 @@ nav .nav-bar .container {
     margin-top: 5px;
 }
 
-nav .nav-bar .nav-actions a {
-    text-decoration: none;
-    border-bottom: none !important;
+nav .nav-bar #doku-action-btn button {
+  border-color: transparent;
 }
 
 nav .nav-bar .nav-brand {
@@ -85,10 +90,9 @@ nav .nav-bar .nav-brand {
     h2 {
         font-size: 18px;
         margin: 0;
-        margin-top: 13px;
+        margin-top: 10px;
         text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;
         display: inline-block;
     }
 }
@@ -124,36 +128,7 @@ nav .nav-bar .nav-actions button {
     }
 }
 
-nav .nav-bar .nav-item {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    color: $white;
-    display: inline-block;
-    cursor: pointer;
-    margin-top: 3px;
-    margin-left: 10px;
-    border-radius: 30px;
-    border: 1px solid transparent;
-    transition: $trans border;
-    span {
-        display: inline-block;
-        vertical-align: middle;
-        user-select: none;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        text-decoration: none !important;
-        color: $white;
-        height: 30px;
-    }
-    &:focus,
-    &:active,
-    &:hover {
-        border: 1px solid $white;
-    }
-}
+
 
 @media (max-width: 767.98px) {
     nav .nav-bar .nav-item {
@@ -164,24 +139,7 @@ nav .nav-bar .nav-item {
     }
 }
 
-nav .nav-bar .nav-usericon {
-    background-color: $accent;
-    text-transform: uppercase;
-    line-height: 35px;
-    span {
-        line-height: 31px;
-        font-size: 20px;
-    }
-}
-
-nav .nav-bar .nav-searchicon {
-    span {
-        line-height: 29px;
-    }
-}
-
-nav .nav-expanded #search,
-nav .nav-expanded #user {
+nav .nav-expanded #menu_unified {
     display: none;
 }
 
@@ -193,14 +151,17 @@ nav .nav-expanded-inner {
     font-size: $font-size-ui;
 }
 
-nav .nav-expanded-inner .ui-title {
+nav .nav-expanded-inner .menu-icon {
+    display: block;
     margin-top: 7px;
+    margin-bottom: 10px;
+    font-size: 24px;
 }
 
 nav .nav-expanded-inner ul {
     padding: 0;
     list-style-type: none;
-    margin-top: 0;
+    margin-top: 20px;
 }
 
 nav .nav-expanded-inner li {
@@ -218,12 +179,16 @@ nav .nav-expanded-inner li a:active {
     text-decoration: inherit;
 }
 
+.nav-expanded-inner .right {
+  margin-top: 30px;
+}
+
 nav .nav-expanded #dw__search {
     vertical-align: middle;
 }
 
 nav .nav-expanded #qsearch__in {
-    max-width: 60%;
+    max-width: 50%
 }
 
 .dokuwiki form.search div.ajax_qsearch {
@@ -238,13 +203,25 @@ nav .nav-expanded #qsearch__in {
     }
 }
 
-@media only screen and (min-width: 768px) {
-    nav .nav-expanded .right {
-        text-align: right;
-    }
-    nav .nav-expanded-inner li {
-        text-align: right;
-    }
+@media only screen and (min-width:576px) {
+  .nav-expanded-inner .right {
+    margin-top: 0px;
+  }
+  nav .nav-expanded-inner .menu-icon {
+      font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  nav .nav-bar .nav-actions {
+      white-space: nowrap;
+      overflow-x: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      ::-webkit-scrollbar {
+        display: none;
+      }
+  }
 }
 
 /* UI Elements
@@ -294,13 +271,6 @@ nav .nav-expanded #qsearch__in {
         max-width: 1000px;
     }
 }
-
-
-/* @media (min-width: 992px) and (max-width: 1199.98px) {
-    .usr-container {
-        max-width: 767.98px;
-    }
-} */
 
 .breadcrumbs {
     font-size: $font-size-ui;
@@ -545,43 +515,6 @@ div.insitu-footnote {
     margin-top: 20px;
 }
 
-
-/* @media (prefers-color-scheme: dark) {
-    .usr-content .fn .content, .usr-content .fn_bot {
-        color: $text-light;
-    }
-    .dokuwiki div.footnotes {
-        border-top: 1px solid rgba(255, 255, 255, 0.36);
-    }
-    .usr-content .fn_bot {
-        color: $text-light;
-    }
-}
-@media (prefers-color-scheme: dark) {
-    .mode_show .usr-content {
-        background-color: $bg-dark;
-    }
-    .mode_show .usr-content h1, .mode_show .usr-content h2 {
-        color: $white;
-    }
-    .mode_show .usr-content h3, .mode_show .usr-content h4, .mode_show .usr-content h5 {
-        color: $text-light-med;
-    }
-    .mode_show .usr-content p, .mode_show .usr-content ul, .mode_show .usr-content ol {
-        color: $text-light;
-    }
-    .mode_show .usr-content blockquote {
-        color: $text-light;
-    }
-    .mode_show .usr-content .table {
-        color: $text-light;
-    }
-    .mode_show .usr-content p code, .mode_show .usr-content table code, .mode_show .usr-content pre.code {
-        background: $bg-dark-well !important;
-    }
-} */
-
-
 /* Edit Page
 ==================================================== */
 
@@ -640,14 +573,6 @@ div.picker button.toolbutton {
     padding-top: $xlg-pad;
     border-top: $border-bold;
 }
-
-/* .mode_edit .level1, .mode_preview .level1 {
-    padding: .75rem 1.25rem;
-    margin-bottom: 1rem;
-    border: $border-ui;
-    border-radius: 7px;
-    transition: 1s height, 0.7s background-color;
-} */
 
 .mode_edit .usr-content .page .license,
 .mode_preview .usr-content .page .license {
@@ -899,6 +824,7 @@ div.nspagesPicturesModeImg {
     border-bottom-left-radius: $br;
     border-bottom-right-radius: $br;
     overflow: hidden;
+    background-repeat: no-repeat;
 }
 
 /* Caption plugin
@@ -942,6 +868,9 @@ div.figure {
     }
     nav .nav-expanded {
         display: none;
+    }
+    div.nspagesPicturesModeImg span {
+      display: block;
     }
 }
 
