@@ -322,6 +322,12 @@ nav .nav-expanded #qsearch__in {
     display: block;
 }
 
+.usr-content .page p img.icon {
+  height: 0.94em;
+  display: inline-block;
+  margin: 0;
+}
+
 .usr-content h1:not(:first-child) {
     margin-top: $xlg-pad;
 }
