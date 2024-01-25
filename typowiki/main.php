@@ -170,15 +170,13 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                         <?php if ($showTools): ?>
                             <div id="dokuwiki__pagetools">
                                 <ul class="footer-menu ul-raw">
-                                    <?php tpl_toolsevent('pagetools', array(
-                                        'edit'      => tpl_action('edit', 1, 'li', 1),
-                                        'discussion'=> _tpl_action('discussion', 1, 'li', 1),
-                                        'revisions' => tpl_action('revisions', 1, 'li', 1),
-                                        'backlink'  => tpl_action('backlink', 1, 'li', 1),
-                                        'subscribe' => tpl_action('subscribe', 1, 'li', 1),
-                                        'revert'    => tpl_action('revert', 1, 'li', 1),
-                                        'top'       => tpl_action('top', 1, 'li', 1),
-                                    )); ?>
+                                  <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
+                                    foreach($items as $item) {
+                                      echo '<li>'
+                                      .'<a href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+                                      . $item->getTitle()
+                                      . '</a></li>';
+                                    } ?>
                                 </ul>
                             </div>
                         <?php endif; ?>
@@ -187,11 +185,13 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                         <!-- SITE TOOLS -->
                         <div id="dokuwiki__sitetools">
                             <ul class="footer-menu ul-raw">
-                                <?php tpl_toolsevent('sitetools', array(
-                                    'recent'    => tpl_action('recent', 1, 'li', 1),
-                                    'media'     => tpl_action('media', 1, 'li', 1),
-                                    'index'     => tpl_action('index', 1, 'li', 1),
-                                )); ?>
+                                <?php $items = (new \dokuwiki\Menu\SiteMenu())->getItems();
+                                  foreach($items as $item) {
+                                    echo '<li>'
+                                    .'<a href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+                                    . $item->getTitle()
+                                    . '</a></li>';
+                                  } ?>
                             </ul>
                         </div>
                     </div>
