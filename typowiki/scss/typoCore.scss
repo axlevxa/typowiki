@@ -61,9 +61,15 @@ nav #wiki-logo {
   display: inline-block;
 }
 
-nav #wiki-logo img {
+.nav-brand a {
+  display: block;
+  border-bottom: none;
+}
+
+.nav-brand img {
   height: 35px;
   width: 35px;
+  margin-right: 5px;
 }
 
 nav .nav-bar {
@@ -90,7 +96,7 @@ nav .nav-bar .nav-brand {
     h2 {
         font-size: 18px;
         margin: 0;
-        margin-top: 10px;
+        margin-top: 5px;
         text-overflow: ellipsis;
         white-space: nowrap;
         display: inline-block;
@@ -99,9 +105,9 @@ nav .nav-bar .nav-brand {
 
 nav .nav-bar .nav-brand h2 a {
     border-bottom: none !important;
-    &:hover,
-    &:focus,
-    &:active {
+    span:hover,
+    span:focus,
+    span:active {
         border-bottom: $border-link !important;
     }
 }

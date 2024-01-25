@@ -44,11 +44,12 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                 <div class="container">
                     <div class="row">
                     <div class="col-3 col-md-6 col-lg-7 nav-brand">
-                      <?php /* Uncomment the line below for a custom logo. Upload a SQUARE (70x70) logo into the data/media folder (root of the media manager) and replace 'logo.png' accordingly: */ ?>
+                      <?php /* For a custom logo, upload a SQUARE (70x70) logo into the data/media folder (root of the media manager). */ ?>
                       <?php
                       $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png', ':wiki:dokuwiki-128.png'));
-                      tpl_link(wl(),'<img src="'.$logo.'" alt="" />','id="wiki-logo" accesskey="h" title="[H]"') ?>
-                      <h2><?php tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"') ?></h2>
+                      $logo_img = '<img src="'.$logo.'" alt="" id="wiki-logo" />';
+                      $sitename_html = $logo_img . '<span>' . $conf['title'] . '</span>'; ?>
+                      <h2><?php tpl_link(wl(),$sitename_html,'accesskey="h" title="[H]"') ?></h2>
                     </div>
                     <div class="col-9 col-md-6 col-lg-5 nav-actions">
                         <span id="doku-action-btn"><?php tpl_button('edit')?></span>
