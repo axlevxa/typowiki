@@ -79,13 +79,15 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
                               }
                           ?>
                           <ul role="navigation">
-                              <?php tpl_toolsevent('usertools', array(
-                                  'userpage'  => _tpl_action('userpage', 1, 'li', 1),
-                                  'profile'   => tpl_action('profile', 1, 'li', 1),
-                                  'register'  => tpl_action('register', 1, 'li', 1),
-                                  'login'     => tpl_action('login', 1, 'li', 1),
-                                  'admin'     => tpl_action('admin', 1, 'li', 1),
-                              )); ?>
+                              <?php $items = (new \dokuwiki\Menu\UserMenu())->getItems();
+                                foreach($items as $item) {
+                                  echo '<li>'
+                                    .'<a href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+                                    .'<span class="icon">'.inlineSVG($item->getSvg()).'</span>'
+                                    . '<span class="a11y">'.$item->getLabel().'</span>'
+                                    . $item->getTitle()
+                                  . '</a></li>';
+                                } ?>
                           </ul>
                         </div>
                     </div>
