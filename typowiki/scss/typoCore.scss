@@ -248,8 +248,32 @@ nav .nav-expanded #qsearch__in {
 
 /* User content ==================================================== */
 
-.dokuwiki .secedit {
-    display: none;
+.dokuwiki div.section_highlight {
+    margin: inherit;
+    padding: 0px;
+    border: 0px;
+    animation: 0.2s linear forwards sectionHighlightShadow;
+}
+
+@keyframes sectionHighlightShadow {
+ from {box-shadow: none;}
+ to {box-shadow: rgba(0, 0, 0, 0.3) 10px 0px 10px -10px;}
+}
+
+.btn_secedit button {
+    font-size: $font-size-small;
+    font-weight: normal;
+    padding: 5px;
+    border: 0px;
+    color: $text-ui;
+}
+.btn_secedit button:hover {
+    color: $white;
+}
+.btn_secedit button::after {
+    margin-left: 5px;
+    content: "\E731";
+    font-family: 'microns';
 }
 
 .usr-content {
@@ -321,11 +345,6 @@ nav .nav-expanded #qsearch__in {
     padding-top: $lg-pad;
 }
 
-.usr-content h1:first-child {
-    margin-top: 0px;
-    margin-top: 0;
-}
-
 .usr-content .page p img {
     max-width: 100%;
     height: auto;
@@ -338,7 +357,7 @@ nav .nav-expanded #qsearch__in {
   margin: 0;
 }
 
-.usr-content h1:not(:first-child) {
+.usr-content h1 {
     margin-top: $xlg-pad;
 }
 
